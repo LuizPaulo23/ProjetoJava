@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="367e025c-8e4a-4362-9f45-e56c9c43ad10" name="Changes" comment="ADD: projeto em Java Finalizado">
-      <change afterPath="$PROJECT_DIR$/src/ProjectBank/DB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProjectBank/FinalDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProjectBank/TableDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProjectBank/Front.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProjectBank/Front.java" afterDir="false" />
     </list>
@@ -82,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675579309751</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ADD: projeto em Java Finalizado">
+      <created>1675581273015</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675581273015</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
