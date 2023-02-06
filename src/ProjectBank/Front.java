@@ -25,12 +25,13 @@ public class Front extends JFrame {
         setSize(300, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
+        setBackground(Color.BLACK);
 
-        labelName = new JLabel("Name: ");
+        labelName = new JLabel("Nome: ");
         fieldName = new JTextField(10);
         labelAction = new JLabel("Escolha: ");
-        comboAction = new JComboBox<>(new String[]{"Deposit", "Withdraw"});
-        labelValue = new JLabel("Value: ");
+        comboAction = new JComboBox<>(new String[]{"Depositar", "Sacar"});
+        labelValue = new JLabel("Valor: ");
         fieldValue = new JTextField(10);
         buttonSubmit = new JButton("Submit");
         buttonCancel = new JButton("Cancel");
@@ -51,11 +52,12 @@ public class Front extends JFrame {
                 Transaction.insertAccount(account);
                 String action = comboAction.getSelectedItem().toString();
                 double value = Double.parseDouble(fieldValue.getText());
-                if (action.equals("Deposit")) {
+                if (action.equals("Depositar")) {
                     account.deposit(value);
+                    JOptionPane.showMessageDialog(Front.this, "Valor depositado R$ " + value);
                 } else {
                     if (!account.withDraw(value)) {
-                        JOptionPane.showMessageDialog(Front.this, "Insufficient balance for withdrawal of " + value);
+                        JOptionPane.showMessageDialog(Front.this, "Saldo insuficiente R$" + value);
                     }
                 }
                 fieldName.setText("");
