@@ -1,46 +1,41 @@
-// Projeto - Curso em Java
+// Projeto - Conta bancária em Java
 package ProjectBank;
-
 public class Account {
-    private static final int MAX_LENGTGH = 12;
     private  String ag;
     private String cc;
     private  String name;
+    //private double password;
+    private double deposito;
+    private double saque;
     private double balance;
 
   // static final propriedade constante e compartilhada
+
     private Log logger;
 
     public Account(String ag, String cc, String name){
      this.ag = ag;
      this.cc = cc;
      this.name = name;
-     setName(name);
      logger = new Log();
     }
-    public void setName(String name){
+    // Depósito ------------------------
 
-        if(name.length() > MAX_LENGTGH){
-             this.name = name.substring(0, MAX_LENGTGH);
-        } else {
-            this.name = name;
-        }
-
-    }
-
-    // Deposito
     public void deposit(double value){
         balance += value;
+        deposito +=value;
         logger.out("Saldo Disponível após o Depósito: " + "R$" + balance);
     }
 
-// Sacar valor
+// Saque -----------------------------------
+
     public boolean withDraw(double value) {
         if(balance < value){
             logger.out("Saldo Atual: " + "R$" + balance);
             return false;
         }else{
             balance -= value; //balance = balance - value;
+            saque -= value;
             logger.out("Saldo Disponível após o saque: " + "R$" + balance);
             return true;
         }
@@ -60,5 +55,12 @@ public class Account {
         return balance;
     }
 
+    public double getDeposito(){
+        return deposito;
+    }
+
+    public double getSaque(){
+        return saque;
+    }
 
 }
