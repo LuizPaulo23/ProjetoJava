@@ -52,4 +52,13 @@ public class Account {
         //String result = "A conta " + this.name + " " + this.ag + " / " + this.cc + " possui em caixa: R$ " + balance;
         return "A conta " + this.name + " " + this.ag + " / " + this.cc + " possui em caixa: R$ " + balance;
     }
+
+    public String getName() {
+        return name;
+    }
+    public double getBalance() {
+        return balance;
+    }
+
+
 }
