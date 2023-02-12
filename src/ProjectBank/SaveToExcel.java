@@ -22,16 +22,20 @@ public class SaveToExcel {
                 sheet = workbook.createSheet("DBtransaction");
                 Row headerRow = sheet.createRow(0);
                 headerRow.createCell(0).setCellValue("Nome");
-                headerRow.createCell(1).setCellValue("Saldo");
-                //headerRow.createCell(2).setCellValue("Senha");
+                headerRow.createCell(1).setCellValue("Depósito");
+                headerRow.createCell(2).setCellValue("Saque");
+                headerRow.createCell(3).setCellValue("Saldo");
+                //headerRow.createCell(4).setCellValue("Senha");
             }
 
             int rowNum = sheet.getLastRowNum() + 1;
             for (Account account : accountList) {
                 Row row = sheet.createRow(rowNum++);
                 row.createCell(0).setCellValue(account.getName());
-                row.createCell(1).setCellValue(account.getBalance());
-                //row.createCell(2).setCellValue(account.getPassword());
+                row.createCell(1).setCellValue(account.getDeposito());
+                row.createCell(2).setCellValue(account.getSaque());
+                row.createCell(3).setCellValue(account.getBalance());
+                //row.createCell(4).setCellValue(account.getPassword());
 
             }
 
