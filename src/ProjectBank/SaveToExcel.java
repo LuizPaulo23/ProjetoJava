@@ -4,7 +4,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,12 +17,13 @@ public class SaveToExcel {
         try {
             inputStream = new FileInputStream(filePath);
             workbook = new XSSFWorkbook(inputStream);
-            sheet = workbook.getSheet("Contas");
+            sheet = workbook.getSheet("DBtransaction");
             if (sheet == null) {
-                sheet = workbook.createSheet("Contas");
+                sheet = workbook.createSheet("DBtransaction");
                 Row headerRow = sheet.createRow(0);
                 headerRow.createCell(0).setCellValue("Nome");
                 headerRow.createCell(1).setCellValue("Saldo");
+                //headerRow.createCell(2).setCellValue("Senha");
             }
 
             int rowNum = sheet.getLastRowNum() + 1;
@@ -31,6 +31,8 @@ public class SaveToExcel {
                 Row row = sheet.createRow(rowNum++);
                 row.createCell(0).setCellValue(account.getName());
                 row.createCell(1).setCellValue(account.getBalance());
+                //row.createCell(2).setCellValue(account.getPassword());
+
             }
 
             try (FileOutputStream fos = new FileOutputStream(filePath)) {
