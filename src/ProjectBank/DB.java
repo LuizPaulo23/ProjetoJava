@@ -25,7 +25,6 @@ public class DB {
 
                System.out.println("Digite a senha");
                String password = scanner.nextLine();
-
                //Account accountPassword = Transaction.generateAccount(password);
                //Transaction.insertAccount(accountPassword);
 
